@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket/screens/bottom_bar.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const BottomBar(),
+      home: kIsWeb ? const Scaffold() : const BottomBar(),
     );
   }
 }
