@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         //primaryColor: Styles.primaryColor,
         primaryColor: primary,
       ),
-      home: kIsWeb ? const BottomBar() : const BottomBar(),
+      home: const BottomBar(),
     );
   }
 }
