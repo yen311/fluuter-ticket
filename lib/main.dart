@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:ticket/screens/bottom_bar.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:ticket/utils/app_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +16,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
+      scrollBehavior: MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},
       ),
-      home: kIsWeb ? const Scaffold() : const BottomBar(),
+      debugShowCheckedModeBanner: false,
+      title: 'Here is the header',
+      theme: ThemeData(
+        //primaryColor: Styles.primaryColor,
+        primaryColor: primary,
+      ),
+      home: kIsWeb ? const BottomBar() : const BottomBar(),
     );
   }
 }
